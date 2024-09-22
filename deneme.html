@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pythoncraft</title>
+    <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('MinecraftTen-VGORe.ttf') format('truetype');
+        }
+        body {
+            background-image: url('https://i.imgur.com/GbDKdC4.png');
+            background-size: cover;
+            font-family: 'Minecraft', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            width: 500px;
+        }
+        h1 {
+            background-image: url('https://i.imgur.com/GDL9l1I.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 120px;
+            margin: 0;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-family: 'Minecraft', sans-serif;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Minecraft', sans-serif;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            font-family: 'Minecraft', sans-serif;
+        }
+        .language-options {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <div class="menu">
+            <button class="menu-item" id="languageButton">Dil Secenekleri</button>
+            <button class="menu-item" id="versionLogButton">Version Log</button>
+        </div>
+        <div class="language-options" id="languageOptions">
+            <button class="menu-item" id="turkishButton">turkce</button>
+            <button class="menu-item" id="englishButton">English</button>
+        </div>
+        <p id="infoText">Minecraft ama Python ile yazilmis hali ve acik kaynak kodlu oyunu indirmek istiyorsan</p>
+        <a href="pythoncraft.zip" download class="button" id="downloadButton">Download</a>
+    </div>
+
+    <script>
+        const languageButton = document.getElementById('languageButton');
+        const languageOptions = document.getElementById('languageOptions');
+        const turkishButton = document.getElementById('turkishButton');
+        const englishButton = document.getElementById('englishButton');
+        const infoText = document.getElementById('infoText');
+
+        languageButton.addEventListener('click', () => {
+            languageOptions.style.display = languageOptions.style.display === 'none' ? 'block' : 'none';
+        });
+
+        turkishButton.addEventListener('click', () => {
+            infoText.textContent = 'Minecraft ama Python ile yazilmis hali ve acik kaynak kodlu oyunu indirmek istiyorsan';
+            languageButton.textContent = 'Dil Seçenekleri';
+            languageOptions.style.display = 'none';
+        });
+
+        englishButton.addEventListener('click', () => {
+            infoText.textContent = 'Minecraft but made in Python and if you want to download the open-source game';
+            languageButton.textContent = 'Language Options';
+            languageOptions.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
